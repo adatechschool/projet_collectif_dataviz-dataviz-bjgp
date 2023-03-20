@@ -6,3 +6,4 @@ let test = x
 let x = 6
 console.log (test)
 
+bintou
