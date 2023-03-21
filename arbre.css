@@ -7,32 +7,129 @@ body {
     background-position:50% -8%;
     }
 
+    /*
+.feuille1
+    {
+        height: 150px;
+        width: 115px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border : 3px solid;
+        border-spacing: 0;
+      }
+.feuille2
+    {
+        height: 150px;
+        width: 115px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border : 3px solid red;
+    }
+.feuille3
+    {
+        height: 150px;
+        width: 115px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border : 3px solid blue;
+    }*/
+
+    .feuille4
+    {
+        margin-left: 52%;
+        height: 80px;
+        width: 80px;
+        display: block;
+        justify-content: middle;
+        align-items: center;
+        border : 3px solid orange;
+        transform: rotate(180deg);
+        
+      }
+
 .feuille1 {
     display:-webkit-inline-flex;
     transform: rotate(90deg);
-    position: absolute;
+    /*position: absolute;*/
     margin-top: 50px;
     margin-left: 650px;
     width : 40px;
     height: 60px;
+    border : 3px solid blue;
 }
 
 .feuille2 {
     display:-webkit-inline-flex;
     transform: rotate(180deg);
-    position: absolute;
+    /*position: absolute;*/
     margin-left: 660px;
     margin-top: 180px;
     width : 50px;
     height: 60px;
+    border : 3px solid red;
 }
 
 .feuille3 {
     display:-webkit-inline-flex;
     transform: rotate(90deg);
-    position: absolute;
+    /*position: absolute;*/
     margin-left: 515px;
     margin-top: 275px;
     width : 50px;
     height: 60px;
+    border : 3px solid green;
 }
+
+/*section .illustration div:nth-child(1)
+{
+    animation: animate 5s linear infinite;
+    animation-delay: -7s;
+}
+section .illustration div:nth-child(2)
+{
+    animation: animate 5s linear infinite;
+    animation-delay: -7s;
+}
+section .illustration div:nth-child(3)
+{
+    animation: animate 5s linear infinite;
+    animation-delay: -7s;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+    }
+    10%
+    {
+        opacity: 1;
+    }
+    20%
+    {
+        transform: translateX(-20px) rotate(45deg);
+    }
+    40%
+    {
+        transform: translateX(-20px) rotate(90deg);
+    }
+    60%
+    {
+        transform: translateX(20px) rotate(180deg);
+    }
+    80%
+    {
+        transform: translateX(-20px) rotate(180deg);
+    }
+    100%
+    {
+        top: 110%;
+        transform: translateX(-20px) rotate(225deg);
+    }
+}*/
