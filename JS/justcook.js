@@ -30,7 +30,6 @@ async function recipes20 (url){
     return await reponse.json()
 }
 
-// let recipesTest = recipes20("../BDD JSON/Recettes20.json")
+let recipesTest = recipes20("../BDD JSON/Recettes20.json")
 
-// generateRecipe("../BDD JSON/Recettes20.json",5)
-recipes20("../BDD JSON/Recettes20.json").then(data => generateRecipe(data,5))
+recipesTest.then(data => generateRecipe(data,5))

@@ -1,7 +1,3 @@
-
-
-
-
 export function generateRecipe(resultRecipe,number){
     for (let i=0 ; i < number; i++){
         const recipe = resultRecipe[i];
