@@ -9,6 +9,7 @@ export function generateRecipe(resultRecipe,number){
         imageRecipe.src=recipe.image;
 
         const titleRecipe = document.createElement("h3");
+        titleRecipe.dataset.id= recipe.id
         titleRecipe.innerText = recipe.title;
 
         const usedIngredientCount = document.createElement("p");
