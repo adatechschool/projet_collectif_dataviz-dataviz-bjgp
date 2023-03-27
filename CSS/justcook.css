@@ -1,0 +1,9 @@
+/*on veut metrre une bordure pour chaque recette*/
+
+article {
+    border: solid;
+    display: inline-block;
+    border-color: blue;
+    padding: 10px;
+    margin: 10px;
+}
