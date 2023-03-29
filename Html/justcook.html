@@ -5,27 +5,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just Cook</title>
-    <link rel="stylesheet" type="text/css" href="..\CSS\justcook.css">
-    <script type="module" src="..\JS\justcook.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
+
+    <link rel="stylesheet" type="text/css" href="..\CSS\justcook.css">
 </head>
 
-<h1> Bienvenue sur Just Cook</h1>
 
 <body>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Just Cook</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.expatica.com/app/uploads/sites/5/2014/05/french-food-1920x1080.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.rustica.fr/images/gratin-dauphinois-l1200-h0.jpg">
+          </div>
+          <div class="carousel-item">
+            <img src="https://recettesmag.fr/wp-content/uploads/2020/05/tiramisu-au-mascarpone-et-aux-fraises.jpg">
+          </div>
+          <div class="carousel-item">
+            <img src="https://theveglife.com/wp-content/uploads/2014/11/Apple-Crisp-2.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!-- <div class="input-group col-6 offset-3 ">
+    <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Search Ingredient" 
+    aria-label="Recipient's username" 
+    aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" 
+            type="button" 
+            id="search">
+
+            Search
+    </button> -->
+    </div>
+    <div id="content"></div>
+
 <section class="ingredients"> 
-<h3>Liste des ingrédients</h3>
+<h3>Entrer les ingrédients</h3>
 <input type="text" id=ingre1 name="ingredient1"><br>
 <input type="text" id=ingre2 name="ingredient2"><br>
 <input type="text" id=ingre3 name="ingredient3"><br>
 <button type="button" id="buttonadd" onClick="addIngre()">Ajouter</button>
 </section>
-<section class="ficheRecipe">
+<section class="ficheRecipe"></section>
 
-</section>
 
-<a href="https://spoonacular.com/recipeCardImages/recipeCard-1679484337654.png">Apple Pie with PB&J Streusel</a>
-    <!-- <script type="module" src="..\JS\justcook.js"></script> -->
+
+     <script type="module" src="..\JS\justcook.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

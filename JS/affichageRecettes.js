@@ -26,7 +26,7 @@ export function generateRecipe(resultRecipe,number){
         const titleRecipe = document.createElement("a");
         titleRecipe.setAttribute("href", WebRecipe)
         titleRecipe.dataset.id= recipe.id
-        titleRecipe.innerText = recipe.title;
+        titleRecipe.innerHTML += `<br> ${recipe.title}`;
 
 
         const usedIngredientCount = document.createElement("p");
