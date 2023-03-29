@@ -15,13 +15,13 @@ export function generateRecipe(resultRecipe,number){
     
     let fiche = ficheRecipe("../BDD JSON/DetailsRecettes.json")
 
-    function UrlRecipe (adresseWeb,nomVariable){
+    function UrlRecipe (adresseWeb,nameVariable,idRecipe){
         for (let i=0;i<adresseWeb.length;i++){
             let fiche = adresseWeb[i]
-            
-            nomVariable.setAttribute("href",fiche.url)
+            if(idRecipe==fiche.id){
+            console.log("UrlRecipe",fiche.url)
+            nameVariable.setAttribute("href", fiche.url)}
         }
-        
     }
 
 
@@ -38,11 +38,12 @@ export function generateRecipe(resultRecipe,number){
 
         const titleRecipe = document.createElement("a");
         titleRecipe.setAttribute("class", "site")
-        fiche.then(data => UrlRecipe(data,titleRecipe))
+        fiche.then(data => UrlRecipe(data,titleRecipe,recipe.id))
         // titleRecipe.setAttribute("href", WebSite())
         titleRecipe.setAttribute("target", "_blank")
-        titleRecipe.dataset.id= recipe.id
+        titleRecipe.dataset.id= recipe.id;
         titleRecipe.innerHTML += `<br>${recipe.title}` ;
+        
 
 
         const usedIngredientCount = document.createElement("p");
