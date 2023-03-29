@@ -71,13 +71,35 @@ async function apiFicheRecipe (idRecipe){
     
 
 
-    function addIngre () {
-        let ingre1 = document.getElementById("ingre1").value;
-        let ingre2 = document.getElementById("ingre2").value;
-        let ingre3 = document.getElementById("ingre3").value;
-       let listingre = ingre1 +",+"+  ingre2  +",+"+  ingre3
-        console.log(listingre)
-        let recipes = recette(apiURL(apiKey,listingre,5))
-        console.log( recipes)
-        recipes.then(data => generateRecipe(data,5))
-        }
+function addIngre () {
+    let listeIngredients = document.getElementsByClassName("ingredient");
+    let listingre = "";
+    for (let i=0; i<listeIngredients.length;i++){
+        listingre += listeIngredients[i].value + ",+";
+        
+    }
+    // let ingre1 = document.getElementById("ingre1").value;
+    // let ingre2 = document.getElementById("ingre2").value;
+    // let ingre3 = document.getElementById("ingre3").value;
+    // let listingre = ingre1 +",+"+  ingre2  +",+"+  ingre3
+    console.log(listingre)
+
+
+    let recipes = recette(apiURL(apiKey,listingre,5))
+    console.log( recipes)
+    recipes.then(data => generateRecipe(data,5))
+    }
+
+function addInput () {
+    const addNewInput = document.querySelector(".addInput");
+    const NewInput = document.createElement("input");
+    NewInput.setAttribute("class", "ingredient")
+    NewInput.setAttribute("type","text")
+    
+    const newBR = document.createElement("br");
+    // NewInput.createElement("<br>")
+    
+
+    addNewInput.appendChild(NewInput)
+    addNewInput.appendChild(newBR)
+}

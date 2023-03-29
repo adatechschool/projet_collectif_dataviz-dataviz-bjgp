@@ -97,11 +97,12 @@
     <div id="content"></div>
 
 <section class="ingredients"> 
-<h3>Entrer les ingrédients</h3>
-<input type="text" id=ingre1 name="ingredient1"><br>
-<input type="text" id=ingre2 name="ingredient2"><br>
-<input type="text" id=ingre3 name="ingredient3"> <br>
-<button type="button" id="buttonadd" onClick="addIngre()">Ajouter</button>
+    <h3>Liste des ingrédients <button type="button" onClick="addInput()">+</button><br></h3>
+    <input class="ingredient" type="text" id=ingre1 name="ingredient1"><br>
+    <input class="ingredient" type="text" id=ingre2 name="ingredient2"><br>
+    <input class="ingredient" type="text" id=ingre3 name="ingredient3"> 
+    <div class="addInput"></div>
+    <button type="button" id="buttonadd" onClick="addIngre()">Ajouter</button>
 </section>
 <section class="ficheRecipe"></section>
 
