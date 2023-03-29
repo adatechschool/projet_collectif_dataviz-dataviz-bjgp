@@ -35,25 +35,11 @@ let recipesTest = recipes20("../BDD JSON/Recettes20.json")
 recipesTest.then(function (data) 
      { 
         generateRecipe(data,5)
-        // affichageRecette(data)
+        
     })
 
 
-//  function affichageRecette(tableauRecette){
-//     // function coucou () {
-//     //     alert ("coucou")
-//     // }
-//     // document.addEventListener("click", coucou)
-// console.log(tableauRecette)
-//     for (let i=0; i<tableauRecette.length; i++){
-//         const id = tableauRecette[i].id
-//         console.log(id)
-//         var selectionTitle= document.querySelector(`article[data-id="${id}"]`)
-//         selectionTitle.addEventListener("click",() =>{alert ("recette")
-    
-//         })
-//     }
-// }
+
 
 
 

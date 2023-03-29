@@ -1,21 +1,34 @@
-function affichageDetail (){
-    var titreRecette = document.querySelector(".ficheRecipe article h3")
 
-    for ( let i =0; i < titreRecette.length; i ++) {
 
-    titreRecette[i].addEventListener("click", function(event){
 
-        var id = event.target.dataset.id;
-        console.log (id)
-    })
-    }
 
-}
+
 
 export function generateRecipe(resultRecipe,number){
+    
+    async function ficheRecipe(url){
+        const reponse = await fetch(url);
+        const fiches = await reponse.json();
+        
+        return fiches
+    }
+    
+    let fiche = ficheRecipe("../BDD JSON/DetailsRecettes.json")
+
+    function UrlRecipe (adresseWeb,nomVariable){
+        for (let i=0;i<adresseWeb.length;i++){
+            let fiche = adresseWeb[i]
+            
+            nomVariable.setAttribute("href",fiche.url)
+        }
+        
+    }
+
+
     for (let i=0 ; i < number; i++){
-        const WebRecipe= "http://www.google.com"
         const recipe = resultRecipe[i];
+        // const WebRecipe = "https://google.com";
+
         const sectionRecipe = document.querySelector(".ficheRecipe");
         const recipeElement = document.createElement("article");
 
@@ -24,9 +37,12 @@ export function generateRecipe(resultRecipe,number){
         imageRecipe.src=recipe.image;
 
         const titleRecipe = document.createElement("a");
-        titleRecipe.setAttribute("href", WebRecipe)
+        titleRecipe.setAttribute("class", "site")
+        fiche.then(data => UrlRecipe(data,titleRecipe))
+        // titleRecipe.setAttribute("href", WebSite())
+        titleRecipe.setAttribute("target", "_blank")
         titleRecipe.dataset.id= recipe.id
-        titleRecipe.innerText = recipe.title;
+        titleRecipe.innerHTML += `<br>${recipe.title}` ;
 
 
         const usedIngredientCount = document.createElement("p");
@@ -43,5 +59,5 @@ export function generateRecipe(resultRecipe,number){
         recipeElement.appendChild(usedIngredientCount);
         recipeElement.appendChild(missedIngredientCount);
     }
- affichageDetail()
+ 
 }
