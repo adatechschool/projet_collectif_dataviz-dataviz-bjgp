@@ -4,38 +4,39 @@ const apiChoixRecette = "../BDD JSON/Recettes20.json";
 // import { generateRecipe } from "./affichageRecettes.js";
 
 function apiURL (key,ingredients,number){
-    const apiFindRecipes = `https://api.spoonacular.com/recipes/findByIngredients?${key}&ingredients=${ingredients}&number=${number}`
-    return apiFindRecipes
+    const apiFindRecipes = `https://api.spoonacular.com/recipes/findByIngredients?${key}&ingredients=${ingredients}&number=${number}`;
+    return apiFindRecipes;
 }
 
 async function recette(url) {
-    let reponse = await fetch (url)
-    return await reponse.json()
+    let reponse = await fetch (url);
+    return await reponse.json();
 }
 
 
 async function apiFicheRecipe (idRecipe){
     const apiFicheRecette = `https://api.spoonacular.com/recipes/${idRecipe}/card?${apiKey}`;
-    let reponse = await fetch (apiFicheRecette)
-    return await reponse.json()
+    let reponse = await fetch (apiFicheRecette);
+    return await reponse.json();
 }
 
     function generateRecipe(resultRecipe,number){
         
         async function apiFicheRecipe (idRecipe){
             const apiFicheRecette = `https://api.spoonacular.com/recipes/${idRecipe}/card?${apiKey}`;
-            let reponse = await fetch (apiFicheRecette)
-            let json = await reponse.json()
-            console.log(json.url )
-            return json.url
+            let reponse = await fetch (apiFicheRecette);
+            let json = await reponse.json();
+            console.log(json.url );
+            return json.url;
         }
-            
+        const sectionRecipe = document.querySelector(".ficheRecipe");
+        sectionRecipe.textContent="";    
     
         for (let i=0 ; i < number; i++){
             const recipe = resultRecipe[i];
             // const WebRecipe = "https://google.com";
     
-            const sectionRecipe = document.querySelector(".ficheRecipe");
+            // const sectionRecipe = document.querySelector(".ficheRecipe");
             const recipeElement = document.createElement("article");
     
             // Création de la fiche recette
@@ -43,10 +44,9 @@ async function apiFicheRecipe (idRecipe){
             imageRecipe.src=recipe.image;
     
             const titleRecipe = document.createElement("a");
-            titleRecipe.setAttribute("class", "site")
-            apiFicheRecipe(recipe.id).then(data => titleRecipe.setAttribute("href",`${data}`))
-            // titleRecipe.setAttribute("href", recipe.image)
-            titleRecipe.setAttribute("target", "_blank")
+            titleRecipe.setAttribute("class", "site");
+            apiFicheRecipe(recipe.id).then(data => titleRecipe.setAttribute("href",`${data}`));
+            titleRecipe.setAttribute("target", "_blank");
             titleRecipe.dataset.id= recipe.id;
             titleRecipe.innerHTML += `<br>${recipe.title}` ;
             
@@ -82,24 +82,24 @@ function addIngre () {
     // let ingre2 = document.getElementById("ingre2").value;
     // let ingre3 = document.getElementById("ingre3").value;
     // let listingre = ingre1 +",+"+  ingre2  +",+"+  ingre3
-    console.log(listingre)
+    console.log(listingre);
 
 
-    let recipes = recette(apiURL(apiKey,listingre,5))
-    console.log( recipes)
-    recipes.then(data => generateRecipe(data,5))
+    let recipes = recette(apiURL(apiKey,listingre,5));
+    console.log( recipes);
+    recipes.then(data => generateRecipe(data,5));
     }
 
 function addInput () {
     const addNewInput = document.querySelector(".addInput");
     const NewInput = document.createElement("input");
-    NewInput.setAttribute("class", "ingredient")
-    NewInput.setAttribute("type","text")
+    NewInput.setAttribute("class", "ingredient");
+    NewInput.setAttribute("type","text");
     
     const newBR = document.createElement("br");
     // NewInput.createElement("<br>")
     
 
-    addNewInput.appendChild(NewInput)
-    addNewInput.appendChild(newBR)
+    addNewInput.appendChild(NewInput);
+    addNewInput.appendChild(newBR);
 }
